@@ -1,0 +1,153 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 45 65% 52%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 20 82% 84%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 45 65% 52%;
+
+    --radius: 0.5rem;
+    
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-montserrat;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+}
+
+@layer components {
+  .luxury-border {
+    @apply border border-gold/50 shadow-md transition-all duration-300;
+  }
+  
+  .luxury-card {
+    @apply bg-white rounded-lg p-6 luxury-border hover:shadow-lg hover:border-gold;
+  }
+  
+  .animated-input {
+    @apply block w-full px-4 py-3 border border-gray-200 rounded-md focus:ring-2 focus:ring-gold focus:border-transparent transition-all duration-300;
+  }
+  
+  .gold-gradient {
+    @apply bg-gradient-to-r from-gold-light via-gold to-gold-dark text-white;
+  }
+  
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .transform-section > * {
+    @apply opacity-0;
+  }
+  
+  .luxury-btn {
+    @apply px-6 py-3 rounded-full font-medium transition-all duration-300 
+           bg-gradient-to-r from-gold-light via-gold to-gold-dark
+           text-white hover:shadow-lg hover:scale-105 active:scale-95;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-playfair font-bold mb-4 text-navy-dark;
+  }
+  
+  .section-subtitle {
+    @apply text-lg md:text-xl text-gray-600 mb-12 max-w-3xl mx-auto;
+  }
+}
+
+.carousel-item {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+.whatsapp-btn:hover {
+  animation: pulse 2s infinite;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
